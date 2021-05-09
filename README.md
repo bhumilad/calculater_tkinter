@@ -9,5 +9,9 @@ it's super simple,,super esay
  ```python=
  - pip install tkinter
  ```
- #output
- ![output image]("C:\Users\admin\Pictures\Screenshots\calculater.png\calculater.png")
+ 
+#output
+ ![calculater](https://user-images.githubusercontent.com/70130258/117565322-2e366380-b0ce-11eb-9565-0146d8124c18.png)
+
+##thank  you ##
+
