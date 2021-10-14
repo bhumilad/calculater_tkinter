@@ -2,12 +2,19 @@
 
 from tkinter import *
 root=Tk()
-root.geometry('600x700')
+root.geometry('650x800')
 root.title('my calculator')
-root.wm_iconbitmap('calculator.ico')
+#root.wm_iconbitmap('/home/vivek/Documents/GitHub/calculater_tkinter/calculater.ico')
 root.configure(bg='#856ff8')
-
+tabWidth = 4
 # click function
+def backspace(event):
+    scvalue.set(scvalue.get()[:-1])
+    screen.update()
+def clear(event):
+    scvalue.set('')
+    screen.update()
+
 def click(event):
     global scvalue
     text=event.widget.cget('text')
@@ -123,5 +130,21 @@ boff=Button(f5,text='off',font='slider 40 bold',padx=12,pady=12,relief=GROOVE,bg
 boff.pack(side=LEFT,padx=25)
 boff.bind('<Button-1>',click)
 f5.pack()
+
+# six frame for clear button press and clear text 
+f6=Frame(root,bg='#856ff8')
+bclear=Button(f6,text='clear',font='slider 40 bold',relief=GROOVE,bg='gray',borderwidth=6)
+bclear.pack(side=LEFT,padx=25,pady=5)
+bclear.bind('<Button-1>',clear)
+f6.pack()
+
+# seven frame for off button press and erase one charecter backspace
+f7 = Frame(root,bg='#856ff8')
+bbackspace=Button(f7,text='backspace',font='slider 40 bold',relief=GROOVE,bg='gray',borderwidth=6)
+bbackspace.pack(side=RIGHT,padx=2)
+bbackspace.bind('<Button-1>',backspace)
+f7.pack()
+
+
 
 root.mainloop()
